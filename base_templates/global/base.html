@@ -10,8 +10,13 @@
         <h1>DESWEB</h1>
     </header>
 
-    {% block h1 %}{% endblock h1 %}
+    
+
+    
     <main class='main-content'>
+        <div class="h1-content">
+            <h1>{% block h1 %}{% endblock h1 %}</h1>
+        </div>
         <div class='content'>
             {% block content %}{% endblock content %}
         </div>

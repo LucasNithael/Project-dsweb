@@ -2,7 +2,7 @@
 
 {% block title %}polls{% endblock title %}
 
-
+{% block h1 %}{{question.text}}{% endblock h1 %}
 {% block content %}
 
     {% for alternative in alternatives %}
