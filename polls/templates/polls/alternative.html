@@ -1,0 +1,18 @@
+{% extends 'global/base.html' %}
+
+{% block title %}polls{% endblock title %}
+
+
+{% block content %}
+
+    {% for alternative in alternatives %}
+    <div class='question-conteiner'>
+        <p>{{alternative.text}}</p>
+        <a href="#">Votar</a>
+    </div>
+    {% endfor %}
+
+{% endblock content %}
+
+
+

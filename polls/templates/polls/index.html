@@ -1,0 +1,19 @@
+{% extends 'global/base.html' %}
+
+{% block title %}polls{% endblock title %}
+
+{% block h1 %}Enquetes{% endblock h1 %}
+
+{% block content %}
+
+    {% for question in questions %}
+    <div class='question-conteiner'>
+        <p>{{question.text}}</p>
+        <a href="{% url 'polls:alternative' question.id%}">alternativas</a>
+    </div>
+    {% endfor %}
+
+{% endblock content %}
+
+
+
