@@ -17,3 +17,5 @@ class Alternative(models.Model):
     question = models.ForeignKey(Question, on_delete = models.CASCADE)
     def __str__(self):
         return f"{self.id} - {self.text}"
+    def total_vote(self):
+        return self.vote

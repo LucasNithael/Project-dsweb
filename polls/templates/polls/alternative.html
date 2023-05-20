@@ -4,14 +4,17 @@
 
 {% block h1 %}{{question.text}}{% endblock h1 %}
 {% block content %}
+<div class='total_vote'>total de votos: {{total_vote}}</div>
 
     {% for alternative in alternatives %}
-    <div class='question-conteiner'>
-        <p>{{alternative.text}}</p>
-        <a href="#">Votar</a>
-    </div>
+        <p class='resultado'>{{alternative.vote}}</p>
+        <div class='question-conteiner'>
+            <p>{{alternative.text}}</p>
+            <a href="{% url 'polls:vote' alternative.id %}">votar</a>
+        </div>
+        
     {% endfor %}
-
+    <a href="{% url 'polls:index' %}" class='back-polls'>enquetes</a>
 {% endblock content %}
 
 
