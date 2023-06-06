@@ -2,18 +2,22 @@
 
 {% block title %}polls{% endblock title %}
 
-{% block h1 %}Enquetes{% endblock h1 %}
+{% block h1 %}
+    {% if  questions %}
+        Enquetes
+    {% else %}
+        Sem enquentes
+    {% endif %}
+{% endblock h1 %}
 
 {% block content %}
+    {% if  questions %}
+        {% for question in questions %}
+            <div class='question-conteiner'>
+                <p>{{question.text}}</p>
+                <a href="{% url 'polls:alternative' question.id%}">alternativas</a>
+            </div>
+        {% endfor %}
 
-    {% for question in questions %}
-    <div class='question-conteiner'>
-        <p>{{question.text}}</p>
-        <a href="{% url 'polls:alternative' question.id%}">alternativas</a>
-    </div>
-    {% endfor %}
-
+    {% endif %}
 {% endblock content %}
-
-
-
