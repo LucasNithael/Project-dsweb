@@ -3,7 +3,7 @@ from user.models import User
 
 class Question(models.Model):
     text = models.CharField(max_length=150)
-    pub_date = models.DateField()
+    pub_date = models.DateField(auto_now_add=True)
     author = models.ForeignKey(
         User, related_name='author',
         on_delete = models.CASCADE, null=True

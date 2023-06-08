@@ -1,0 +1,13 @@
+{% extends 'global/base.html' %}
+
+{% block title %}register polls{% endblock title %}
+
+{% block h1 %}Cadastrar enquete{% endblock h1 %}
+{% block content %}
+    <div class="input-question">
+        {% for field in form %}
+            <label for="id_text">{{field.label}}</label>
+            {{field}}
+        {% endfor %}
+    </div>
+{% endblock content %}

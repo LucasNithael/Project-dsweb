@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Question, Alternative
+from .forms import RegisterQuestion
+import pdb
 
 def index_view(request):
     questions = Question.objects.all().order_by('-id')
@@ -35,3 +37,9 @@ def vote_view(request, alternative_id):
     question_id = alternative.question.id
     alternative.save()
     return redirect('polls:alternative', question_id)
+
+
+def register_view(request):
+    form = RegisterQuestion()
+    #pdb.set_trace()
+    return render(request, 'polls/register_polls.html', {'form':form})
